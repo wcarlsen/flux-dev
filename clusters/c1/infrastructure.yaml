@@ -10,8 +10,5 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/clusters/base
+  path: ./infrastructure/clusters/c1
   prune: true
-  postBuild:
-    substitute:
-      flux_nginx_annotation: test
