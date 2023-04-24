@@ -1,12 +1,13 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: nginx
   name: nginx
   namespace: nginx
+  annotations:
+    test: test
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: nginx
@@ -14,7 +15,13 @@ spec:
     metadata:
       labels:
         app: nginx
-    spec:
-      containers:
-      - image: nginx:latest
-        name: nginx
+      annotations:
+        test: still-a-test
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nginx
+  labels:
+    test: stil-only-a-test
