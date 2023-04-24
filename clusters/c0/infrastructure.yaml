@@ -12,3 +12,6 @@ spec:
     name: flux-system
   path: ./infrastructure/clusters/base
   prune: true
+  postBuild:
+    substitute:
+      flux_nginx_replicas : 3
